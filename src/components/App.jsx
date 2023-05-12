@@ -17,22 +17,21 @@ const App = () => {
   }, [contacts]);
 
   const addContact = contactAdd => {
-    const CheckContact = contacts.find(
+    const checkContact = contacts.find(
       contact => contact.name === contactAdd.name
     );
 
-    if (CheckContact) {
+    if (checkContact) {
       window.alert(`${contactAdd.name} is already in contacts.`);
       return;
-    } else {
-      const newContact = {
-        id: shortid.generate(),
-        name: contactAdd.name,
-        number: contactAdd.number,
-      };
-
-      setContacts([newContact, ...contacts]);
     }
+    const newContact = {
+      id: shortid.generate(),
+      name: contactAdd.name,
+      number: contactAdd.number,
+    };
+
+    setContacts([newContact, ...contacts]);
   };
   const handleDelete = e => {
     setContacts(contacts.filter(contact => contact.id !== e));
