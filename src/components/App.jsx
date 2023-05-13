@@ -31,10 +31,10 @@ const App = () => {
       number: contactAdd.number,
     };
 
-    setContacts([newContact, ...contacts]);
+    setContacts(prevState => [newContact, ...prevState]);
   };
   const handleDelete = e => {
-    setContacts(contacts.filter(contact => contact.id !== e));
+    setContacts(prevState => prevState.filter(contact => contact.id !== e));
   };
 
   const changeFilter = evt => {

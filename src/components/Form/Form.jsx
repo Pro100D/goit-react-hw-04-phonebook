@@ -23,8 +23,8 @@ const Form = ({ onSubmit }) => {
 
       case 'number':
         setNumber(value);
+        break;
 
-      // eslint-disable-next-line no-fallthrough
       default:
         return;
     }
